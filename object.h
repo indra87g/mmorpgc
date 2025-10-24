@@ -2,7 +2,7 @@ typedef struct object {
     const char *description;
     const char *tag;
     struct object *location;
-    struct object *destination
+    struct object *destination;
 } OBJECT;
 
 extern OBJECT objs[];
