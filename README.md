@@ -4,4 +4,24 @@
 
 A MMORPG game that written in C.
 
-Continue: https://helderman.github.io/htpataic/htpataic06.html
+## How To Compile
+```sh
+# Generate Object
+make generateObj
+
+# Compile
+make
+
+# Run 
+bin/mmorpgc
+```
+*To generate object, install `graphviz` first!
+```sh
+# Install
+apt update --fix-missing
+apt install graphviz
+
+# It will allow you to use "dot" command
+```
+
+Continue: https://helderman.github.io/htpataic/htpataic10.html

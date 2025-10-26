@@ -5,10 +5,12 @@ CFLAGS  := -Wall -O3
 ARGS    := -c -o
 
 # Directories
-SRCDIR   := ./
+SRCDIR   := src
 BUILDDIR := build
 BINDIR   := bin
 TARGET   := $(BINDIR)/mmorpgc
+HELPER	 := helper/object.awk helper/object.txt
+UNHELPER := helper/map.gv helper/map.png include/object.h src/object.c
 
 # Sources & Objects for Main Build
 SRC := $(shell find $(SRCDIR) -type f -name "*.c")
@@ -30,6 +32,14 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.c
 
 clean:
 	$(RM) $(BUILDDIR) $(BINDIR)
-	$(RM) mmorpgc
+	$(RM) $(UNHELPER)
+	
 format:
 	clang-format -i $(wildcard */*.c) $(wildcard */*.h)
+	
+generateObj:
+	awk -v pass=h -f $(HELPER) > include/object.h
+	awk -v pass=c1 -f $(HELPER) > src/object.c
+	awk -v pass=c2 -f $(HELPER) >> src/object.c
+	awk -f helper/map.awk helper/object.txt > helper/map.gv
+	dot -Tpng -o helper/map.png helper/map.gv
