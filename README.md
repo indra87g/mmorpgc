@@ -14,6 +14,9 @@ make
 
 # Run 
 bin/mmorpgc
+
+# Preparation before commit (Delete all binary file)
+make clean
 ```
 *To generate object, install `graphviz` first!
 ```sh
@@ -24,4 +27,4 @@ apt install graphviz
 # It will allow you to use "dot" command
 ```
 
-Continue: https://helderman.github.io/htpataic/htpataic10.html
+Continue: https://helderman.github.io/htpataic/htpataic11.html
