@@ -42,4 +42,6 @@ generateObj:
 	awk -v pass=c1 -f $(HELPER) > src/object.c
 	awk -v pass=c2 -f $(HELPER) >> src/object.c
 	awk -f helper/map.awk helper/object.txt > helper/map.gv
+
+graph:
 	dot -Tpng -o helper/map.png helper/map.gv

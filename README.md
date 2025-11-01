@@ -6,11 +6,8 @@ A MMORPG game that written in C.
 
 ## How To Compile
 ```sh
-# Generate Object
-make generateObj
-
-# Compile
-make
+# Run build script
+bash build.sh
 
 # Run 
 bin/mmorpgc
@@ -27,4 +24,4 @@ apt install graphviz
 # It will allow you to use "dot" command
 ```
 
-Continue: https://helderman.github.io/htpataic/htpataic11.html
+Continue: https://helderman.github.io/htpataic/htpataic13.html
