@@ -1,3 +1,6 @@
+#pragma once
+#include <stdbool.h>
+
 #define MAX_PARAMS 26
 
 extern const char *params[];

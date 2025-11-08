@@ -5,6 +5,7 @@
 #include "object.h"
 #include "reach.h"
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 static OBJECT *victimHere() {

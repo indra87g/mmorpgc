@@ -1,3 +1,7 @@
+#pragma once
+#include <stdbool.h>
+#include "object.h"
+
 typedef enum {
    distSelf,
    distHeld,
