@@ -34,9 +34,6 @@ clean:
 	$(RM) $(BUILDDIR) $(BINDIR)
 	$(RM) $(UNHELPER)
 	
-format:
-	clang-format -i $(wildcard */*.c) $(wildcard */*.h)
-	
 generateObj:
 	awk -v pass=h -f $(HELPER) > include/object.h
 	awk -v pass=c1 -f $(HELPER) > src/object.c
@@ -45,3 +42,6 @@ generateObj:
 
 graph:
 	dot -Tpng -o helper/map.png helper/map.gv
+	
+format:
+	clang-format -i $(wildcard */*.c) $(wildcard */*.h)

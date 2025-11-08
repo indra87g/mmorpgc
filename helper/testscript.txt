@@ -1,0 +1,8 @@
+eat 
+inventory
+get whatever
+get yourself
+get silver coin 
+get coin 
+get guard
+get cave

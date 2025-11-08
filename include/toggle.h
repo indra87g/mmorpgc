@@ -16,3 +16,4 @@ extern void toggleDoorToCave(void);
 extern void toggleBox(void);
 extern void toggleBoxLock(void);
 
+extern void toggleLamp(void);

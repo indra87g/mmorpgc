@@ -1,29 +1,33 @@
+#include "match.h"
+#include "object.h"
+#include "reach.h"
 #include <stdbool.h>
 #include <stdio.h>
-#include "object.h"
-#include "match.h"
-#include "reach.h"
 
-bool executeOpen(void) {
-    OBJECT *obj = reachableObject("what you want to open", params[0]);
-    if (obj != NULL) (*obj->open)();
-    return true;
+int executeOpen(void) {
+  OBJECT *obj = reachableObject("what you want to open", params[0]);
+  if (obj != NULL)
+    (*obj->open)();
+  return obj != NULL ? 1 : 0;
 }
 
-bool executeClose(void) {
-    OBJECT *obj = reachableObject("what you want to close", params[0]);
-    if (obj != NULL) (*obj->close)();
-    return true;
+int executeClose(void) {
+  OBJECT *obj = reachableObject("what you want to close", params[0]);
+  if (obj != NULL)
+    (*obj->close)();
+  return obj != NULL ? 1 : 0;
 }
 
-bool executeLock(void) {
-    OBJECT *obj = reachableObject("what you want to lock", params[0]);
-    if (obj != NULL) (*obj->lock)();
-    return true;
+int executeLock(void) {
+  OBJECT *obj = reachableObject("what you want to lock", params[0]);
+  if (obj != NULL)
+    (*obj->lock)();
+  return obj != NULL ? 1 : 0;
 }
 
-bool executeUnlock(void) {
-    OBJECT *obj = reachableObject("what you want to unlock", params[0]);
-    if (obj != NULL) (*obj->unlock)();
-    return true;
+int executeUnlock(void) {
+  OBJECT *obj = reachableObject("what you want to unlock", params[0]);
+  if (obj != NULL)
+    (*obj->unlock)();
+  return obj != NULL ? 1 : 0;
 }

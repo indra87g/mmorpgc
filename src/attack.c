@@ -1,0 +1,32 @@
+#include "damage.h"
+#include "match.h"
+#include "misc.h"
+#include "noun.h"
+#include "object.h"
+#include "reach.h"
+#include <stdbool.h>
+#include <stdlib.h>
+
+static OBJECT *victimHere() {
+  OBJECT *victim = actorHere();
+  if (victim == NULL) {
+    printf("There is nobody here to attack.\n");
+  }
+  return victim;
+}
+
+int executeAttack(void) {
+  OBJECT *victim = *params[0] == '\0'
+                       ? victimHere()
+                       : reachableObject("who to attack", params[0]);
+  if (victim != NULL) {
+    OBJECT *weapon = *params[1] == '\0'
+                         ? getOptimalWeapon(player)
+                         : getPossession(player, "wield", params[1]);
+    if (weapon != NULL) {
+      dealDamage(player, weapon, victim);
+      return 1;
+    }
+  }
+  return 0;
+}
