@@ -1,0 +1,9 @@
+# Build artifacts
+/build
+/bin
+
+# Generated files
+/include/object.h
+/src/object.c
+/helper/map.gv
+/helper/map.png

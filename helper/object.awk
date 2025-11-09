@@ -1,7 +1,11 @@
 BEGIN {
     count = 0;
     obj = "";
-    if (pass == "c2") {
+    if (pass == "h") {
+        print "#pragma once";
+        print "#include <stdbool.h>";
+    }
+    else if (pass == "c2") {
         print "\nstatic bool alwaysTrue(void) { return true; }";
         print "\nOBJECT objs[] = {";
     }
