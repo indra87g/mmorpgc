@@ -24,4 +24,4 @@ apt install graphviz
 # It will allow you to use "dot" command
 ```
 
-Continue: https://helderman.github.io/htpataic/htpataic19.html
+Continue: 22. Client-server outbuf.c line 61

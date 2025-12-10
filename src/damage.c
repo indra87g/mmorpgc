@@ -1,8 +1,8 @@
-#include "misc.h"
-#include "object.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "misc.h"
+#include "object.h"
 
 static void describeAttack(OBJECT *attacker, OBJECT *victim, OBJECT *weapon) {
   const char *weaponDescription =
